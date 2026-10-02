@@ -5,6 +5,7 @@ from __future__ import annotations
 from dataclasses import asdict, dataclass
 from pathlib import Path
 import struct
+from .local_input import read_local_file
 
 MAX_FILE_BYTES = 64 * 1024 * 1024
 IMAGE_FILE_RELOCS_STRIPPED = 0x0001
@@ -114,9 +115,9 @@ def inspect_file(path: str | Path) -> Report:
     if source.is_symlink() or not source.is_file():
         raise PEFormatError("input must be a regular local file, not a symbolic link")
     try:
-        if source.stat().st_size > MAX_FILE_BYTES:
-            raise PEFormatError("input exceeds 64 MiB limit")
-        data = source.read_bytes()
+        data = read_local_file(source, MAX_FILE_BYTES)
+    except ValueError as exc:
+        raise PEFormatError(str(exc)) from exc
     except OSError as exc:
         raise PEFormatError(f"cannot read input: {exc.strerror or type(exc).__name__}") from exc
     return inspect_bytes(data)

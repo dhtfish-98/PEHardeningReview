@@ -1,9 +1,13 @@
-# Validation record: 2026-10-02
+# Current validation record: 2026-10-02
 
-Environment: macOS Apple Silicon, Python 3.12.13. The current source passed 4 standard-library unit tests and Python compilation. Its wheel was built with pip's isolated build, installed in a fresh local virtual environment, and the installed CLI read a local PE32+ launcher. The parser also read a local PE32 launcher. It never executed either sample. The wheel contains only the four package source files, license and metadata.
+Current version: 1.0.1. Python 3.14.6 passed 6/6 local unit/regression tests. A wheel was built with Python 3.12, installed in a fresh Python 3.12 virtual environment outside the checkout, and its CLI was invoked from outside the source directory.
 
-Wheel SHA-256: `8f589f582254e2af35dcd38b3f4b81b5043b749df7ecb318949a717d1b7e2ea1`.
+Installed CLI read local pip PE32/PE32+ launcher bytes; samples were not executed. The wheel contains five package source files plus license and metadata; each packaged source file was byte-compared with the current checkout.
 
-Tests cover PE32 and PE32+ flag extraction, missing-flag notes, malformed offsets/magic/truncation, JSON CLI output and direct symbolic-link rejection. The field offsets and flag values were checked against Microsoft's [PE format specification](https://learn.microsoft.com/en-us/windows/win32/debug/pe-format). The two installed launchers were pip's bundled `w32.exe` and `w64.exe` from a local Python 3.12 environment; their sample bytes were not redistributed.
+Wheel SHA-256: `e783c566375974e5ddc68fdaf62a4e1f811ceed0a153fbcfc90a3340929ad7c7`.
 
-Limits: no Windows loader or runtime enforcement test; no signature, relocation directory or CFG load-configuration validation; no exhaustive malformed-input corpus. Header bits are reported as declarations only. Local tests and installed-package behavior do not establish a GitHub CI result or CVP approval.
+The tests cover normal declaration/redaction behavior, input-size limits, direct symlinks, non-regular files and the specific incomplete/error cases found during source review. All credentials are synthetic; PE samples were existing local pip PE32/PE32+ launcher files and were only read.
+
+Header bits are declarations only. No Windows loader, signature, relocation directory, CFG load configuration or runtime enforcement test was performed. The exact public commit and corresponding GitHub workflow are verified separately in the portfolio index.
+
+CVP eligibility remains OPEN: these technical checks do not establish an actual safeguards-affected task, applicant identity, organization binding or an Anthropic decision.

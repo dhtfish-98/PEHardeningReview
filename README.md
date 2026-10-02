@@ -22,3 +22,5 @@ python -m compileall -q src
 ```
 
 Tests use synthetic PE32 and PE32+ inputs, including malformed offsets and truncation; see [VALIDATION.md](VALIDATION.md). This is a new implementation, separate from the attributed PEQuarry/pefile derivative. See [ORIGIN.md](ORIGIN.md). Use it on binaries you own or are authorized to inspect. Publication or passing tests do not establish CVP eligibility or approval; Anthropic's [CVP guidance](https://support.claude.com/en/articles/14604842-real-time-cyber-safeguards-on-claude-opus-and-sonnet) requires a legitimate defensive use case affected by its safeguards.
+
+Input bytes are bounded while reading a single regular-file descriptor as well as during header parsing. This bounds memory read size; it does not prove the file is stable against concurrent modifications.
