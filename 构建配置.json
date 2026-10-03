@@ -1,0 +1,30 @@
+{
+  "schema": "project-build-layout.v1",
+  "project": "PEHardeningReview",
+  "author": "dhtfish98",
+  "kind": "python",
+  "base_public_commit": "b6bdac35074fd344dadc7a00f39e50bb2430de5b",
+  "restored_inputs": [
+    {
+      "original": "LICENSE",
+      "stored": "项目文档/LICENSE",
+      "sha256": "61cc81f0067016c9425160ac683a0791c1f9332a48ffe655d21b2602286e21be"
+    },
+    {
+      "original": "ORIGIN.md",
+      "stored": "项目文档/ORIGIN.md",
+      "sha256": "4d925a4ece7871b24797598dee7bea3f1ed901c716c5e272a4696be6421f24ac"
+    },
+    {
+      "original": "README.md",
+      "stored": "项目文档/README.md",
+      "sha256": "fe36f15560f0d5956aa61de35b117d8f60eee0d00d623d9ac931bf33f4d13ced"
+    },
+    {
+      "original": "VALIDATION.md",
+      "stored": "项目文档/VALIDATION.md",
+      "sha256": "c2ae2ffccf7dd8384e2b113c492e45a70193f724742d61f598c759105a4b48e0"
+    }
+  ],
+  "platform_entries": []
+}
