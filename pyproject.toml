@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pe-hardening-review"
-version = "1.0.1"
+version = "1.0.2"
 description = "Offline read-only review of declared PE mitigation flags"
 readme = "项目文档/README.md"
 requires-python = ">=3.10"
